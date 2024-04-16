@@ -17,6 +17,11 @@ class MethodChannelTorchx extends TorchxPlatform implements TorchProtocol{
   }
 
   @override
+  void init() {
+    methodChannel.invokeMethod(_TorchConstant.init);
+  }
+
+  @override
   void flashOff() async {
     await methodChannel.invokeMethod<void>(_TorchConstant.flashOff);
   }

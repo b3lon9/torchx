@@ -4,8 +4,8 @@ import 'package:torchx/module/torch_protocol.dart';
 import '../bridge/torchx_platform_interface.dart';
 
 class Torch implements TorchProtocol {
-  static final double torchLevelMin = Platform.isAndroid ? 1.0 : 0.1;
-  static final double torchLevelMax = Platform.isAndroid ? 5.0 : 1.0;
+  static final double minLevel = Platform.isAndroid ? 1.0 : 0.1;
+  static final double maxLevel = Platform.isAndroid ? 5.0 : 1.0;
 
   Torch._();
 

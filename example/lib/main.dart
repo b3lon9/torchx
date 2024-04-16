@@ -1,62 +1,70 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:torchx/torchx.dart';
+import 'package:torchx_example/main_example_helper.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ExampleApp());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class ExampleApp extends StatelessWidget {
+  ExampleApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
-    try {
-      platformVersion = await Torch.instance.getPlatformVersion() ??
-          'Unknown platform version';
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
-  }
+  double level = 0;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
+    return exampleColumn(
+      children: [
+        ElevatedButton(
+          onPressed: flashOn,
+          child: const Text("Torch(Flashlight) - flashOn"),
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+        ElevatedButton(
+          onPressed: flashOff,
+          child: const Text("Torch(Flashlight) - flashOff"),
         ),
-      ),
+        ElevatedButton(
+          onPressed: increaseFlashOnLevel,
+          child: const Text("Torch(Flashlight) - increaseFlashOnLevel"),
+        ),
+        ElevatedButton(
+          onPressed: decreaseFlashOnLevel,
+          child: const Text("Torch(Flashlight) - decreaseFlashOnLevel"),
+        ),
+        ElevatedButton(
+          onPressed: checkTorchState,
+          child: const Text("Torch(Flahshlight) - check isTorched"),
+        ),
+      ]
     );
+  }
+
+  void flashOn() {
+    Torch.instance.flashOn();
+  }
+
+  void flashOff() {
+    Torch.instance.flashOff();
+  }
+
+  void increaseFlashOnLevel() {
+    if (level >= Torch.maxLevel) {
+      level = Torch.maxLevel;
+    }
+
+    Torch.instance.flashOnLevel(strengthLevel: level);
+  }
+
+  void decreaseFlashOnLevel() {
+    if (level <= Torch.minLevel) {
+      level = Torch.minLevel;
+    }
+
+    Torch.instance.flashOnLevel(strengthLevel: level);
+  }
+
+  void checkTorchState() async {
+    bool isTorched = await Torch.instance.isTorched;
+    debugPrint("[donguran].. checkTorchState - isTorched:$isTorched");
   }
 }

@@ -35,7 +35,7 @@ class TorchxPlugin: FlutterPlugin, MethodCallHandler {
       result.success(torchController?.isTorched())
     } else if (call.method == TorchConstant.flashOn) {
       if (call.arguments != null) {
-        torchController?.flashOn(level = (call.arguments as Int))
+        torchController?.flashOn(level = (call.arguments as Double).toInt())
       } else {
         torchController?.flashOn()
       }
@@ -43,7 +43,7 @@ class TorchxPlugin: FlutterPlugin, MethodCallHandler {
       torchController?.flashOff()
     } else if (call.method == TorchConstant.torchLevel) {
       if (call.arguments != null) {
-        torchController?.torchLevel(call.arguments as Int)
+        torchController?.torchLevel((call.arguments as Double).toInt())
       } else {
         result.success(torchController?.getTorchLevel())
       }
