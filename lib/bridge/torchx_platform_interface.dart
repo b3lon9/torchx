@@ -1,8 +1,9 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+import 'package:torchx/module/torch_protocol.dart';
 
-import 'torchx_method_channel.dart';
+import '../bridge/torchx_method_channel.dart';
 
-abstract class TorchxPlatform extends PlatformInterface {
+abstract class TorchxPlatform extends PlatformInterface implements TorchProtocol {
   /// Constructs a TorchxPlatform.
   TorchxPlatform() : super(token: _token);
 
@@ -23,7 +24,7 @@ abstract class TorchxPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+  void init() {
+    throw UnimplementedError('init() has not been implemented.');
   }
 }
