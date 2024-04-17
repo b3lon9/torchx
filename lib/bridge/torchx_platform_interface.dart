@@ -3,7 +3,8 @@ import 'package:torchx/module/torch_protocol.dart';
 
 import '../bridge/torchx_method_channel.dart';
 
-abstract class TorchxPlatform extends PlatformInterface implements TorchProtocol {
+abstract class TorchxPlatform extends PlatformInterface
+    implements TorchProtocol {
   /// Constructs a TorchxPlatform.
   TorchxPlatform() : super(token: _token);
 

@@ -5,14 +5,15 @@ import 'package:torchx/module/torch_protocol.dart';
 import '../bridge/torchx_platform_interface.dart';
 
 /// An implementation of [TorchxPlatform] that uses method channels.
-class MethodChannelTorchx extends TorchxPlatform implements TorchProtocol{
+class MethodChannelTorchx extends TorchxPlatform implements TorchProtocol {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
   final methodChannel = const MethodChannel('torchx');
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>(_TorchConstant.version);
+    final version =
+        await methodChannel.invokeMethod<String>(_TorchConstant.version);
     return version;
   }
 
@@ -38,12 +39,15 @@ class MethodChannelTorchx extends TorchxPlatform implements TorchProtocol{
 
   @override
   Future<bool> get isTorched async {
-    return await methodChannel.invokeMethod<bool>(_TorchConstant.isTorched) ?? false;
+    return await methodChannel.invokeMethod<bool>(_TorchConstant.isTorched) ??
+        false;
   }
 
   @override
   Future<double> getLevel() async {
-    return await methodChannel.invokeMethod<double>(_TorchConstant.torchLevel) ?? -1;
+    return await methodChannel
+            .invokeMethod<double>(_TorchConstant.torchLevel) ??
+        -1;
   }
 
   @override
