@@ -12,7 +12,7 @@ class MethodChannelTorchx extends TorchxPlatform implements TorchProtocol{
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version = await methodChannel.invokeMethod<String>(_TorchConstant.version);
     return version;
   }
 
