@@ -1,7 +1,8 @@
 name: torchx
 description: "control all about torch(flashlight). on/off and measure torch levels"
-version: 0.0.3
+version: 0.0.4
 homepage: https://donguran.com/pages/torchx
+repository: https://github.com/b3lon9/torchx
 
 environment:
   sdk: '>=3.3.3 <4.0.0'

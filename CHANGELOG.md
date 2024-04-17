@@ -1,8 +1,11 @@
+## 0.0.4
+* add git repository url.
+
 ## 0.0.3
-* develop 'ios' plugin
+* develop 'ios' plugin.
 
 ## 0.0.2
-* develop 'aos' plugin
+* develop 'aos' plugin.
 
 ## 0.0.1
 
