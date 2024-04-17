@@ -48,6 +48,8 @@ class ExampleApp extends StatelessWidget {
   }
 
   void increaseFlashOnLevel() {
+    level++;
+
     if (level >= Torch.maxLevel) {
       level = Torch.maxLevel;
     }
@@ -56,6 +58,8 @@ class ExampleApp extends StatelessWidget {
   }
 
   void decreaseFlashOnLevel() {
+    level--;
+    
     if (level <= Torch.minLevel) {
       level = Torch.minLevel;
     }
