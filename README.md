@@ -2,7 +2,7 @@
 [![Pub Version](https://img.shields.io/pub/v/torchx?color=blue)](https://pub.dev/packages/torchx)
 <br/>
 
-## TorchX flutter library.
+## TorchX flutter library
 `#torch #flash #flashlight #lantern #torchlight`
 <br/>
 
@@ -41,11 +41,11 @@ import 'package:torchx/torchx.dart'
 ```dart
 Torch.instance.flashOn();
 ```
-measure torch level
+measure torch level and flashOn
 ```dart
 double torchLevel = 0.5;
 
-Torch.instance.flashOnLevel(strength: torchLevel);
+Torch.instance.flashOnLevel(strengthLevel: level);
 ```
 #### Flash OFF
 ```dart
