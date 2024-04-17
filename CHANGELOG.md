@@ -1,3 +1,6 @@
+## 0.0.6
+* fix description text.
+
 ## 0.0.5
 * pub.dev logo add test.
 
