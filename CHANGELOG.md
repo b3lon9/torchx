@@ -1,3 +1,6 @@
+## 0.0.5
+* pub.dev logo add test.
+
 ## 0.0.4
 * add git repository url.
 

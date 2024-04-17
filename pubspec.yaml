@@ -1,6 +1,6 @@
 name: torchx
 description: "control all about torch(flashlight). on/off and measure torch levels"
-version: 0.0.4
+version: 0.0.5
 homepage: https://donguran.com/pages/torchx
 repository: https://github.com/b3lon9/torchx
 
@@ -17,6 +17,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+
+screenshots:
+  - description: use bottlelight application logo:).
+    path: images/logo.png
 
 flutter:
   plugin:
