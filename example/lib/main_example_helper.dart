@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:torchx_example/main.dart';
 
-extension ExampleAppHelper on ExampleApp {
-  Widget exampleColumn({required List<Widget> children}) {
+class ExampleAppHelper extends StatelessWidget {
+  const ExampleAppHelper({
+    super.key,
+    required this.children
+  });
+
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
