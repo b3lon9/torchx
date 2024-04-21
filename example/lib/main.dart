@@ -74,7 +74,7 @@ class _ExampleAppState extends State<ExampleApp> {
       level = Torch.maxLevel;
     }
 
-    Torch.instance.flashOnLevel(strengthLevel: level);
+    Torch.instance.flashOnLevel(strengthLevel: double.parse(level.toStringAsFixed(1)));
   }
 
   void decreaseFlashOnLevel() async {
@@ -89,7 +89,7 @@ class _ExampleAppState extends State<ExampleApp> {
       level = Torch.minLevel;
     }
 
-    Torch.instance.flashOnLevel(strengthLevel: level);
+    Torch.instance.flashOnLevel(strengthLevel: double.parse(level.toStringAsFixed(1)));
   }
 
   void checkTorchLevel() async {

@@ -11,6 +11,6 @@ struct TorchConstant {
 
     static let dispose = "dispose"
 
-    static let TORCH_LEVEL_MIN = 0.1
-    static let TORCH_LEVEL_MAX = 1.0
+    static let TORCH_LEVEL_MIN: Float = 0.1
+    static let TORCH_LEVEL_MAX: Float = 1.0
 }
