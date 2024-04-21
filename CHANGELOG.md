@@ -1,3 +1,6 @@
+## 1.0.2
+* add description to README.md
+
 ## 1.0.1
 * use possible all aos and ios.
 
