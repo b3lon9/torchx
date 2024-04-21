@@ -1,6 +1,6 @@
 name: torchx
 description: "control all about torch(flashlight). on/off and measure torch levels"
-version: 0.0.6
+version: 1.0.1
 homepage: https://donguran.com/pages/torchx
 repository: https://github.com/b3lon9/torchx
 

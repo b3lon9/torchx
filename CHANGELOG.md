@@ -1,3 +1,6 @@
+## 1.0.1
+* use possible all aos and ios.
+
 ## 0.0.6
 * fix description text.
 
