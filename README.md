@@ -18,11 +18,21 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 ## 🚧 version
-Android 23 (LolliPop) =< 🔼 <br />
-IOS 10 <= 🔼 <br/>
+|      os     | target ||
+|-------------|---------|-|
+|   **Android**   | 23+🔼  | LolliPop |
+|     **iOS**     | 10+🔼    ||
+
 
 <br/>
 
+## 🌱 torch level(strength) measure tip
+|      os     |   type    |    min   |   max  |
+|-------------|-----------|----------|--------|
+| **Android** | `integer` |    `1`   |   `5`  |
+|   **iOS**   | `float`   |   `0.1`  |  `1.0` |
+
+<br/>
 
 ## 🚀 usage
 
