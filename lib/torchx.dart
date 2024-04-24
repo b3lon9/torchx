@@ -1,1 +1,1 @@
-export 'module/torch.dart';
+export 'module/torch.dart' show Torch;

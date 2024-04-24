@@ -1,6 +1,6 @@
 name: torchx
 description: "control all about torch(flashlight). on/off and measure torch levels"
-version: 1.0.2
+version: 1.0.3
 homepage: https://donguran.com/pages/torchx
 repository: https://github.com/b3lon9/torchx
 
@@ -11,6 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_logcat: ^1.1.1
   plugin_platform_interface: ^2.0.2
 
 dev_dependencies:

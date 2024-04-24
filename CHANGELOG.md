@@ -1,3 +1,7 @@
+## 1.0.3
+* add description verison and measure strength level.
+* modify import library path.
+
 ## 1.0.2
 * add description to README.md
 

@@ -1,11 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_logcat/log/log_extension.dart';
+import 'package:flutter_logcat/flutter_logcat.dart';
 import 'package:torchx/torchx.dart';
 import 'package:torchx_example/main_example_helper.dart';
-import 'package:flutter_logcat/flutter_logcat.dart';
 
 void main() {
   runApp(const ExampleApp());
@@ -20,10 +18,15 @@ class ExampleApp extends StatefulWidget {
 
 class _ExampleAppState extends State<ExampleApp> {
   double level = 0;
+  @override
+  void initState() {
+    super.initState();
+    Log.v("initState");
+  }
 
   @override
   Widget build(BuildContext context) {
-    Log.d("gma???");
+    Log.d("build");
     return ExampleAppHelper(
       children: [
         ElevatedButton(

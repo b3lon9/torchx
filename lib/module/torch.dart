@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:torchx/module/torch_protocol.dart';
+import '../module/torch_protocol.dart';
 
 import '../bridge/torchx_platform_interface.dart';
 

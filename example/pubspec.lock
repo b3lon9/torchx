@@ -87,10 +87,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_logcat
-      sha256: "50822513eb3aaf22341dd3fc8d5e91ae0e00ce3a4415e82b99bc05212eeb5b0c"
+      sha256: "886e1b32f375e7a531419391c68d11babea84f50253b8031ee2c00a5d99726c1"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.7"
+    version: "1.1.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -261,7 +261,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.6"
+    version: "1.0.2"
   vector_math:
     dependency: transitive
     description:
