@@ -18,10 +18,10 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 ## 🚧 version
-|      os     | target ||
-|-------------|---------|-|
-|   **Android**   | 23+🔼  | LolliPop |
-|     **iOS**     | 10+🔼    ||
+|             | Android | iOS     |
+|-------------|---------|---------|
+| **Support** | SDK 23+🔼 <br> LolliPop🍭 | iOS 10+🔼 |
+
 
 
 <br/>
