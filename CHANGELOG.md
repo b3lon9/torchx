@@ -1,3 +1,6 @@
+## 1.0.4
+* fix private folder.
+
 ## 1.0.3
 * add description verison and measure strength level.
 * modify import library path.

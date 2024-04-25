@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:torchx/module/torch_protocol.dart';
+import '../module/torch_protocol.dart';
 
-import '../bridge/torchx_platform_interface.dart';
+import 'torchx_platform_interface.dart';
 
 /// An implementation of [TorchxPlatform] that uses method channels.
 class MethodChannelTorchx extends TorchxPlatform implements TorchProtocol {
