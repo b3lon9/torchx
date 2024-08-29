@@ -73,6 +73,7 @@ class Torch implements TorchProtocol {
   /// - Torch.instance.flashOnLevel(strengthLevel: [double])
   @override
   void flashOnLevel({required double strengthLevel}) {
+    _assertStrengthLevel(level: strengthLevel);
     TorchxPlatform.instance.flashOnLevel(strengthLevel: strengthLevel);
   }
 
@@ -86,8 +87,12 @@ class Torch implements TorchProtocol {
   /// [setLevel]
   /// you can put device's torch level
   /// before [flashOn] function effect torch level
+  ///
+  /// You must be set [strengthLevel] to be 1.0 and 5.0 in Android.
+  /// and to be 0.1 and 1.0 in iOS.
   @override
   void setLevel({required double strengthLevel}) {
+    _assertStrengthLevel(level: strengthLevel);
     TorchxPlatform.instance.setLevel(strengthLevel: strengthLevel);
   }
 
@@ -98,4 +103,24 @@ class Torch implements TorchProtocol {
   /// if device's flashOff so [isTorched] return 'false'
   @override
   Future<bool> get isTorched => TorchxPlatform.instance.isTorched;
+
+  /// Assert condition [strengthLevel] kind of Platforms.
+  ///
+  /// if [level] is not process this.
+  /// It will send throw [UnsupportedError] message.
+  void _assertStrengthLevel({required double level}) {
+    if (Platform.isAndroid) {
+      if (level < 1.0 || level > 5.0) {
+        throw ArgumentError(
+            "Android requires strengthLevel to be between 1.0 and 5.0");
+      }
+    } else if (Platform.isIOS) {
+      if (level <= 0.0 || level > 1.0) {
+        throw ArgumentError(
+            "iOS requires strengthLevel to be between 0.1 and 1.0");
+      }
+    } else {
+      throw UnsupportedError("Unsupported platform");
+    }
+  }
 }

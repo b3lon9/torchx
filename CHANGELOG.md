@@ -1,3 +1,6 @@
+## 1.0.5
+* add assert condition setLevel function.
+
 ## 1.0.4
 * fix private folder.
 

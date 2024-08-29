@@ -27,34 +27,32 @@ class _ExampleAppState extends State<ExampleApp> {
   @override
   Widget build(BuildContext context) {
     Log.d("build");
-    return ExampleAppHelper(
-      children: [
-        ElevatedButton(
-          onPressed: flashOn,
-          child: const Text("Torch(Flashlight) - flashOn"),
-        ),
-        ElevatedButton(
-          onPressed: flashOff,
-          child: const Text("Torch(Flashlight) - flashOff"),
-        ),
-        ElevatedButton(
-          onPressed: increaseFlashOnLevel,
-          child: const Text("Torch(Flashlight) - increaseFlashOnLevel"),
-        ),
-        ElevatedButton(
-          onPressed: decreaseFlashOnLevel,
-          child: const Text("Torch(Flashlight) - decreaseFlashOnLevel"),
-        ),
-        ElevatedButton(
-          onPressed: checkTorchLevel,
-          child: const Text("Torch(Flashlight) - current torchLevel"),
-        ),
-        ElevatedButton(
-          onPressed: checkTorchState,
-          child: const Text("Torch(Flahshlight) - check isTorched"),
-        ),
-      ]
-    );
+    return ExampleAppHelper(children: [
+      ElevatedButton(
+        onPressed: flashOn,
+        child: const Text("Torch(Flashlight) - flashOn"),
+      ),
+      ElevatedButton(
+        onPressed: flashOff,
+        child: const Text("Torch(Flashlight) - flashOff"),
+      ),
+      ElevatedButton(
+        onPressed: increaseFlashOnLevel,
+        child: const Text("Torch(Flashlight) - increaseFlashOnLevel"),
+      ),
+      ElevatedButton(
+        onPressed: decreaseFlashOnLevel,
+        child: const Text("Torch(Flashlight) - decreaseFlashOnLevel"),
+      ),
+      ElevatedButton(
+        onPressed: checkTorchLevel,
+        child: const Text("Torch(Flashlight) - current torchLevel"),
+      ),
+      ElevatedButton(
+        onPressed: checkTorchState,
+        child: const Text("Torch(Flahshlight) - check isTorched"),
+      ),
+    ]);
   }
 
   void flashOn() async {
@@ -77,12 +75,13 @@ class _ExampleAppState extends State<ExampleApp> {
       level = Torch.maxLevel;
     }
 
-    Torch.instance.flashOnLevel(strengthLevel: double.parse(level.toStringAsFixed(1)));
+    Torch.instance
+        .flashOnLevel(strengthLevel: double.parse(level.toStringAsFixed(1)));
   }
 
   void decreaseFlashOnLevel() async {
     if (Platform.isIOS) {
-     level -= 0.1;
+      level -= 0.1;
     } else {
       level--;
     }
@@ -92,7 +91,8 @@ class _ExampleAppState extends State<ExampleApp> {
       level = Torch.minLevel;
     }
 
-    Torch.instance.flashOnLevel(strengthLevel: double.parse(level.toStringAsFixed(1)));
+    Torch.instance
+        .flashOnLevel(strengthLevel: double.parse(level.toStringAsFixed(1)));
   }
 
   void checkTorchLevel() async {
